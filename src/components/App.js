@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 const Heading = () => (
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Contact List </h1>
-      <p class="lead">
+  <div className="jumbotron jumbotron-fluid">
+    <div className="container">
+      <h1 className="display-4">Contact List </h1>
+      <p className="lead">
         This is a contact list that offers search and view details capability
       </p>
     </div>
@@ -15,14 +15,14 @@ const Heading = () => (
 );
 
 const NameCard = () => (
-  <div class="card">
-    <div class="card-header">Featured</div>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">
+  <div className="card">
+    <div className="card-header">Featured</div>
+    <div className="card-body">
+      <h5 className="card-title">Special title treatment</h5>
+      <p className="card-text">
         With supporting text below as a natural lead-in to additional content.
       </p>
-      <a href="#" class="btn btn-primary">
+      <a href="#" className="btn btn-primary">
         Go somewhere
       </a>
     </div>
@@ -32,8 +32,8 @@ const NameCard = () => (
 class App extends React.Component {
   render() {
     return [
-      <Heading />,
-      <div className="wrapper">
+      <Heading key={0} />,
+      <div className="wrapper" key={1}>
         <ContactList />
         <NameCard />
       </div>
