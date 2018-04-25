@@ -1,6 +1,6 @@
-import { FETCH_CONTACTS } from "../constants";
+import { FETCH_CONTACTS } from '../constants';
 
-const initialState = [{ name: "Jake", id: "0" }, { name: "Rose", id: "1" }];
+const initialState = [{ name: 'Jake', id: '0' }, { name: 'Rose', id: '1' }];
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import { fetchContactsAsync } from "../actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import { fetchContactsAsync } from '../actions';
 
 class ContactList extends React.Component {
   componentDidMount() {
-    this.props.fetchContactsAsync("http://jsonplaceholder.typicode.com/users");
+    this.props.fetchContactsAsync('http://jsonplaceholder.typicode.com/users');
   }
   render() {
     return (
@@ -22,8 +22,6 @@ class ContactList extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { contacts: state.map(contact => contact) };
-};
+const mapStateToProps = state => ({ contacts: state.map(contact => contact) });
 
 export default connect(mapStateToProps, { fetchContactsAsync })(ContactList);

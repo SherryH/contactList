@@ -1,30 +1,36 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require("path");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
+  template: './src/index.html',
+  filename: './index.html'
 });
 
 module.exports = {
   entry: {
-    index: [path.resolve(__dirname, "./src/index.js")]
+    index: [path.resolve(__dirname, './src/index.js')]
   },
-  mode: "development",
+  mode: 'development',
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "main.js"
+    path: path.resolve(__dirname, './dist'),
+    filename: 'main.js'
   },
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'eslint-loader'
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
       {
         test: /\.(css)$/,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader']
       }
     ]
   },

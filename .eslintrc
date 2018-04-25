@@ -1,0 +1,11 @@
+{
+  "extends": ["airbnb", "plugin:flowtype/recommended"],
+  "parser": "babel-eslint",
+  "env": { "es6": true, "browser": true },
+  "plugins": ["flowtype"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "max-len": [2, 150, 2, { "ignoreUrls": true }],
+    "comma-dangle": [1, "never"]
+  }
+}
