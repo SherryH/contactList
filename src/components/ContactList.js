@@ -1,8 +1,14 @@
+/* @flow */
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchContactsAsync } from '../actions';
 
-class ContactList extends React.Component {
+type Props = {
+  fetchContactsAsync: Function,
+  contacts: MapStr
+};
+
+class ContactList extends React.Component<Props> {
   componentDidMount() {
     this.props.fetchContactsAsync('http://jsonplaceholder.typicode.com/users');
   }

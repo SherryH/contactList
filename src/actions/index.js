@@ -1,4 +1,4 @@
-import { FETCH_CONTACTS, FETCH_CONTACTS_ASYNC } from '../constants';
+import { FETCH_CONTACTS } from '../constants';
 
 export const fetchContactsAsync = path => (dispatch) => {
   fetch(path)
