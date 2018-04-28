@@ -3,4 +3,8 @@
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-column-gap: 1em;
   grid-row-gap: 1em;
+  padding: 1.5em;
+}
+
+.cardWrapper {
 }

@@ -10,3 +10,5 @@ export const fetchContactsAsync = path => (dispatch) => {
       });
     });
 };
+
+export const dummy = () => {};
