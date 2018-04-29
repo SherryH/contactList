@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchContactsAsync } from '../actions';
+import { getContacts } from '../reducers';
 
 type Props = {
   fetchContactsAsync: Function,
@@ -28,6 +29,6 @@ class ContactList extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({ contacts: state.map(contact => contact) });
+const mapStateToProps = state => ({ contacts: getContacts(state) });
 
 export default connect(mapStateToProps, { fetchContactsAsync })(ContactList);
