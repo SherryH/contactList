@@ -3,7 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import css from './NameCard.css';
-import { getContacts } from '../../reducers';
+import { getSelectedContact } from '../../reducers';
 
 type Props = {
   selectedContact: Contact
@@ -43,6 +43,6 @@ const NameCard = ({
   );
 };
 
-const mapStateToProps = state => ({ selectedContact: getContacts(state)[1] });
+const mapStateToProps = state => ({ selectedContact: getSelectedContact(state) });
 
 export default connect(mapStateToProps)(NameCard);

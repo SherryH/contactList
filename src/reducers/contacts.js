@@ -1,7 +1,7 @@
 /* @flow */
 
 import { combineReducers } from 'redux';
-import { FETCH_CONTACTS } from '../constants';
+import { FETCH_CONTACTS, SEARCH_CONTACTS } from '../constants';
 
 const byId = (
   state = {
@@ -24,6 +24,9 @@ const byId = (
       });
       return newState;
     }
+    case SEARCH_CONTACTS: {
+      return state;
+    }
     default:
       return state;
   }
@@ -44,3 +47,5 @@ const contactReducer = combineReducers({ byId, allIds });
 export default contactReducer;
 
 export const getContacts = contacts => contacts.allIds.map(id => contacts.byId[id]);
+export const getSelectedContact = (contacts, selectedContactId) => contacts.byId[selectedContactId];
+export const getSearchedContacts = (searchedContact, contacts) => getContacts(contacts).filter(contact => contact.name.includes(searchedContact));
