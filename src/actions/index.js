@@ -1,6 +1,6 @@
 /* @flow */
 
-import { FETCH_CONTACTS, SELECT_CONTACT, SEARCH_CONTACTS } from '../constants';
+import { FETCH_CONTACTS, SELECT_CONTACT, SEARCH_CONTACTS, SORT_CONTACTS } from '../constants';
 
 export const fetchContactsAsync = (path: string) => (dispatch) => {
   fetch(path)
@@ -21,4 +21,8 @@ export const selectContact = (id: number) => ({
 export const searchContacts = (searchText: string) => ({
   type: SEARCH_CONTACTS,
   payload: searchText
+});
+
+export const sortContacts = () => ({
+  type: SORT_CONTACTS
 });

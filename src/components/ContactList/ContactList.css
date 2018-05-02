@@ -1,3 +1,15 @@
 .listControl {
   margin-bottom: 1.5em;
 }
+
+.iconRight {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.statusRight {
+  position: absolute;
+  right: 45px;
+  top: 15px;
+}

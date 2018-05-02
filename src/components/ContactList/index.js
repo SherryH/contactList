@@ -1,14 +1,14 @@
 /* @flow */
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchContactsAsync, selectContact, searchContacts } from '../../actions';
+import { fetchContactsAsync, selectContact } from '../../actions';
 import { getContacts } from '../../reducers';
-import css from './ContactList.css';
+import SearchInput from './SearchInput';
+import SortIcon from './SortIcon';
 
 type Props = {
   fetchContactsAsync: Function,
   selectContact: Function,
-  searchContacts: Function,
   contacts: MapStr
 };
 
@@ -25,25 +25,15 @@ class ContactList extends React.Component<Props> {
   clickHandler = (id: number) => {
     this.props.selectContact(id);
   };
-  handleSearchChange = (event: Event) => {
-    // send event.target.value action
-    this.props.searchContacts(event.target.value);
-  };
 
   render() {
     return (
       <div>
-        <div className={css.listControl}>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Search for Contact"
-            onChange={this.handleSearchChange}
-          />
-        </div>
+        <SearchInput />
         <div className="card">
-          <div className="card-header">Contact List</div>
+          <div className="card-header">
+            Contact List <SortIcon />
+          </div>
           <ul className="list-group list-group-flush">
             {this.props.contacts.map(({ id, name }) => (
               <li
@@ -66,4 +56,4 @@ class ContactList extends React.Component<Props> {
 
 const mapStateToProps = state => ({ contacts: getContacts(state) });
 
-export default connect(mapStateToProps, { fetchContactsAsync, selectContact, searchContacts })(ContactList);
+export default connect(mapStateToProps, { fetchContactsAsync, selectContact })(ContactList);

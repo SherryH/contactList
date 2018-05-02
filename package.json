@@ -38,10 +38,14 @@
     "webpack-serve": "^0.3.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-solid": "^5.0.10",
+    "@fortawesome/react-fontawesome": "0.0.18",
     "bootstrap": "^4.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
+    "react-redux-loading-bar": "^4.0.4",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0"
   }
