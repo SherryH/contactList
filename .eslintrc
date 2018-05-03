@@ -6,6 +6,7 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "max-len": [2, 150, 2, { "ignoreUrls": true }],
-    "comma-dangle": [1, "never"]
+    "comma-dangle": [1, "never"],
+    "jsx-a11y/anchor-is-valid": [0]
   }
 }

@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const history = require('connect-history-api-fallback');
+const convert = require('koa-connect');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
@@ -51,4 +53,15 @@ module.exports = {
     ]
   },
   plugins: [htmlPlugin]
+};
+
+module.exports.serve = {
+  content: [__dirname],
+  add: (app, middleware, options) => {
+    const historyOptions = {
+      index: '/index.html'
+    };
+
+    app.use(convert(history(historyOptions)));
+  }
 };

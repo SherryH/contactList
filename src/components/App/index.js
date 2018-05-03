@@ -7,21 +7,35 @@ import faSort from '@fortawesome/fontawesome-free-solid/faSort';
 import faUp from '@fortawesome/fontawesome-free-solid/faLongArrowAltUp';
 import faDown from '@fortawesome/fontawesome-free-solid/faLongArrowAltDown';
 import LoadingBar from 'react-redux-loading-bar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ContactList from '../ContactList';
 import css from './App.css';
 import Heading from '../Heading';
 import NameCard from '../NameCard';
+import NavBar from '../NavBar';
 
 fontawesome.library.add(faSort, faUp, faDown);
 
-const App = () => [
-  <LoadingBar key={0} loading={1} />,
-  <Heading key={1} />,
-  <div className={css.wrapper} key={2}>
+const Home = () => (
+  <div className={css.wrapper}>
     <ContactList />
     <NameCard />
   </div>
-];
+);
+
+const Report = () => <div>Hello</div>;
+
+const App = () => (
+  <Router>
+    <div>
+      <LoadingBar loading={1} />
+      <NavBar />
+      <Heading />
+      <Route exact path="/" component={Home} />
+      <Route path="/report" component={Report} />
+    </div>
+  </Router>
+);
 
 // class App extends React.Component {
 //   render() {
