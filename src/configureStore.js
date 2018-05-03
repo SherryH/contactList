@@ -8,7 +8,7 @@ const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 /* eslint-enable */
 
-const enhancer = composeEnhancers(applyMiddleware(thunk, loadingBarMiddleware()));
+const enhancer = composeEnhancers(applyMiddleware(loadingBarMiddleware(), thunk));
 
 const appReducer = combineReducers({ reducer, loadingBar: loadingBarReducer });
 

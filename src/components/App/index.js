@@ -15,7 +15,7 @@ import NameCard from '../NameCard';
 fontawesome.library.add(faSort, faUp, faDown);
 
 const App = () => [
-  <LoadingBar key={0} />,
+  <LoadingBar key={0} loading={1} />,
   <Heading key={1} />,
   <div className={css.wrapper} key={2}>
     <ContactList />

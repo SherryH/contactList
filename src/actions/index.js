@@ -1,11 +1,14 @@
 /* @flow */
 
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import { FETCH_CONTACTS, SELECT_CONTACT, SEARCH_CONTACTS, SORT_CONTACTS } from '../constants';
 
 export const fetchContactsAsync = (path: string) => (dispatch) => {
+  dispatch(showLoading());
   fetch(path)
     .then(res => res.json())
     .then((results) => {
+      dispatch(hideLoading());
       dispatch({
         type: FETCH_CONTACTS,
         payload: results
