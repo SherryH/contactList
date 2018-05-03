@@ -5,6 +5,7 @@ import { fetchContactsAsync, selectContact } from '../../actions';
 import { getContacts } from '../../reducers';
 import SearchInput from './SearchInput';
 import SortIcon from './SortIcon';
+import { CONTACT_PATH } from '../../constants';
 
 type Props = {
   fetchContactsAsync: Function,
@@ -14,7 +15,7 @@ type Props = {
 
 class ContactList extends React.Component<Props> {
   componentDidMount() {
-    this.props.fetchContactsAsync('http://jsonplaceholder.typicode.com/users');
+    this.props.fetchContactsAsync(CONTACT_PATH);
   }
   onKeyDownHandler = (event: KeyboardEvent, id: number) => {
     const ENTER_KEY = 13;

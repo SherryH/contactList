@@ -8,7 +8,7 @@ type Props = {
   searchContacts: Function
 };
 
-class SearchInput extends React.Component<Props> {
+class SearchInput extends React.PureComponent<Props> {
   handleSearchChange = (event: Event) => {
     this.props.searchContacts(event.target.value);
   };

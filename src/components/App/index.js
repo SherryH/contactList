@@ -13,6 +13,7 @@ import css from './App.css';
 import Heading from '../Heading';
 import NameCard from '../NameCard';
 import NavBar from '../NavBar';
+import Report from '../Report';
 
 fontawesome.library.add(faSort, faUp, faDown);
 
@@ -22,8 +23,6 @@ const Home = () => (
     <NameCard />
   </div>
 );
-
-const Report = () => <div>Hello</div>;
 
 const App = () => (
   <Router>

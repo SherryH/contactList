@@ -35,6 +35,9 @@ export const getContacts = (state) => {
 
   return contactTree.sort((a, b) => sortNames(a, b, reducerState.sortStatus));
 };
+
+export const getAllContacts = state => contacts.getContacts(state.reducer.contacts);
+
 export const getSelectedContact = state => contacts.getSelectedContact(state.reducer.contacts, state.reducer.selectedContactId);
 
 export const getSortStatus = state => sortStatus.getSortStatus(state.reducer.sortStatus);

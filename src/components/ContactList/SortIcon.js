@@ -12,7 +12,7 @@ type Props = {
   sortStatus: '' | ASC | DES
 };
 
-class SortIcon extends React.Component<Props> {
+class SortIcon extends React.PureComponent<Props> {
   handleSortClick = () => {
     this.props.sortContacts();
   };
