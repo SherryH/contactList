@@ -9,11 +9,12 @@ type Props = {
   selectedContact: Contact
 };
 
-const NameCard = ({
-  selectedContact: {
+const NameCard = ({ selectedContact }: Props) => {
+  const {
     name, phone, email, website, company
-  }
-}: Props) => {
+  } = selectedContact || {
+    name: '', phone: '', email: '', website: ''
+  };
   const { name: companyName, bs } = company || { name: '', bs: '' };
   if (!name) return null;
   return (
