@@ -13,6 +13,9 @@ export const fetchContactsAsync = (path: string) => (dispatch) => {
         type: FETCH_CONTACTS,
         payload: results
       });
+    })
+    .catch((error) => {
+      console.error('Fetch Data Error', error);
     });
 };
 
