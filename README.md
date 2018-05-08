@@ -1,6 +1,6 @@
 # Contact List
 
-A contact list offering search, sort, reporting capability.
+A contact list offering search, sort and reporting capability.
 
 This app was written with care and love to demonstrate the following criteria:
 
@@ -36,6 +36,7 @@ This app was written with care and love to demonstrate the following criteria:
 
 ### Quick Start
 
+* Install: `npm install`
 * Start server: `npm start`
 
 ### Todos
