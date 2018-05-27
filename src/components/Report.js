@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import { connect } from 'react-redux';
 import { fetchContactsAsync } from '../actions';
 import { getAllContacts } from '../reducers';
-import { CONTACT_PATH } from '../constants';
+// import { CONTACT_PATH } from '../constants';
 
 const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 
@@ -31,7 +31,7 @@ type Props = {
 class Report extends React.PureComponent<Props> {
   componentDidMount() {
     if (this.props.contacts.length === 0) {
-      this.props.fetchContactsAsync(CONTACT_PATH);
+      this.props.fetchContactsAsync();
     }
   }
   getContactCountArray = () => {
