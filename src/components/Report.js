@@ -35,10 +35,12 @@ class Report extends React.PureComponent<Props> {
     }
   }
   getContactCountArray = () => {
-    const contactAlphabetCount = {};
-    alphabetArray.forEach((alphabet) => {
-      contactAlphabetCount[alphabet] = 0;
-    });
+    const contactAlphabetCount = alphabetArray.reduce((pre, cur) => {
+      const alphabetCountObj = pre;
+      alphabetCountObj[cur] = 0;
+      return alphabetCountObj;
+    }, {});
+
     this.props.contacts.forEach((contact) => {
       contactAlphabetCount[contact.name[0]] += 1;
     });
