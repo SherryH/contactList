@@ -2,6 +2,7 @@
 
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap';
 import fontawesome from '@fortawesome/fontawesome';
 import faSort from '@fortawesome/fontawesome-free-solid/faSort';
 import faUp from '@fortawesome/fontawesome-free-solid/faLongArrowAltUp';
