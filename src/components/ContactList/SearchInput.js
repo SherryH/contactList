@@ -9,8 +9,13 @@ type Props = {
 };
 
 class SearchInput extends React.PureComponent<Props> {
+  state = {
+    searchText: ''
+  };
   handleSearchChange = (event: Event) => {
-    this.props.searchContacts(event.target.value);
+    this.setState({ searchText: event.target.value }, () => {
+      this.props.searchContacts(this.state.searchText);
+    });
   };
   render() {
     return (
@@ -21,6 +26,7 @@ class SearchInput extends React.PureComponent<Props> {
           id="exampleFormControlInput1"
           placeholder="Search for Contact"
           onChange={this.handleSearchChange}
+          value={this.state.searchText}
         />
       </div>
     );
